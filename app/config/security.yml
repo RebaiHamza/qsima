@@ -6,6 +6,7 @@ security:
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_SELLER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
@@ -45,4 +46,5 @@ security:
             - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/admin/, role: ROLE_SELLER }
             - { path: ^/admin/, role: ROLE_ADMIN }
